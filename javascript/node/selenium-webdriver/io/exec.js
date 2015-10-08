@@ -110,7 +110,7 @@ module.exports = function(command, opt_options) {
 
   var proc = childProcess.spawn(command, options.args || [], {
     env: options.env || process.env,
-    stdio: options.stdio || 'ignore'
+    stdio: options.stdio || 'inherit'
   }).once('exit', onExit);
 
   // This process should not wait on the spawned child, however, we do
